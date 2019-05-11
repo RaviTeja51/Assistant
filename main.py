@@ -8,14 +8,14 @@ text.focus()
 
 
 def get_input(event):
-    input = text.get("1.0","end-1c")
+    inp = text.get("1.0","end-1c")
     text.delete("1.0","end")
 
 
     text.mark_set("insert","{}.{}".format(1,1))
 
-    parse(input)
-    
+    parse(inp)
+
 
 text.bind("<Return>",get_input)
 Label(main,text = "Hi, I am Garuda",fg = "#1A0315",bg ="#328CC1",font=("Script", 16)).grid(row = 0,column = 0,sticky = "ews")
