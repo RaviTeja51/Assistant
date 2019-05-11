@@ -27,7 +27,7 @@ def prompt(to_speak,label_text,prompt):
     speak(to_speak)
 
     print("in here")
-    @get_input
+    
     if name:
         return name
     main.mainloop()
