@@ -26,8 +26,8 @@ def prompt(to_speak,label_text,prompt):
     button.grid()
     speak(to_speak)
 
-    print("in here")
     
+
     if name:
         return name
     main.mainloop()
