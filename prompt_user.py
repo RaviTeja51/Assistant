@@ -1,7 +1,8 @@
 from tkinter import *
 from speak import speak
-def prompt(to_speak,label_text,prompt):
 
+
+def prompt(to_speak,label_text,prompt):
     name = ""
     main = Toplevel()
     label = Label(main,text = label_text)
@@ -26,7 +27,7 @@ def prompt(to_speak,label_text,prompt):
     button.grid()
     speak(to_speak)
 
-    
+
 
     if name:
         return name
