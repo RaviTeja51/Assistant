@@ -2,42 +2,7 @@ from os import system,path
 import re
 from tkinter import *
 from speak import speak
-
-
-def prompt(to_speak,label_text,prompt):
-
-    name = ""
-    count = 0
-    main = Toplevel()
-
-    label = Label(main,text = label_text)
-    label.grid()
-    var = StringVar()
-    entry = Entry(main)
-    entry.focus()
-    entry.grid()
-    entry.config(textvariable = var)
-
-    def get_input():
-        print("function call has occured")
-
-        global name
-        #global count
-        name = var.get()
-        if not input:
-            speak(prompt)
-        else:
-            count = 1
-            main.destroy()
-
-    button = Button(main,text = "Proceed",fg = "white",bg = "#1287A8",command =  get_input)
-    button.grid()
-    speak(to_speak)
-    if name:
-        return name
-    main.mainloop()
-
-
+from prompt_user import prompt
 
 def directory(inp):
 
