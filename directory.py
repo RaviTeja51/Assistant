@@ -27,15 +27,13 @@ def directory(inp):
             if inp == line:
 
                 dir_name = prompt("Enter the name of the  directory","Enter the name of the directory","Please enter the name of the directory")
-
                 break
-
-
+                
     if not dir_name:
         speak("I didn't understand")
     else:
         if path.isdir(f"/home/raviteja/{dir_name}"):
-            choice = prompt("Directory {dir_name} already exist","Do you want to change into that directory","Please enter your choice")
+            choice = prompt(f"Directory {dir_name} already exist",f"Do you want to change into {dir_name}","Please enter your choice")
 
             if choice.lower() == "yes" or choice.lower() == "change":
                 system(f"cd /home/raviteja/{dir_name}")
@@ -55,7 +53,7 @@ def directory(inp):
         else:
             system(f"mkdir /home/raviteja/{dir_name}")
 
-            speak("{dir_name} is created")
+            speak(f"{dir_name} is created")
 
             usr_choice = prompt(f'Do you want change into the "{dir_name}" directory',f'Do you want change into the "{dir_name}" directory',"Yes or No")
 

@@ -1,9 +1,9 @@
 from tkinter import *
 from speak import speak
 
-
+name = ""
 def prompt(to_speak,label_text,prompt):
-    name = ""
+
     main = Toplevel()
     label = Label(main,text = label_text)
     label.grid()
@@ -14,11 +14,10 @@ def prompt(to_speak,label_text,prompt):
     entry.config(textvariable = var)
 
     def get_input():
-        print("function call has occured")
-
         global name
         name = var.get()
-        if not input:
+        print(name)
+        if not name:
             speak(prompt)
         else:
             main.destroy()
@@ -26,9 +25,5 @@ def prompt(to_speak,label_text,prompt):
     button = Button(main,text = "Proceed",fg = "white",bg = "#1287A8",command =  get_input)
     button.grid()
     speak(to_speak)
-
-
-
-    if name:
-        return name
-    main.mainloop()
+    main.wait_window(main)
+    return name
