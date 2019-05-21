@@ -1,5 +1,6 @@
 from tkinter import *
-from parser import parse
+from file_creator import create_file
+from directory import directory
 
 main = Tk()
 main.title("Garuda")
@@ -9,12 +10,14 @@ text.focus()
 
 def get_input(event):
     inp = text.get("1.0","end-1c")
+    print(inp)
     text.delete("1.0","end")
-
-
     text.mark_set("insert","{}.{}".format(1,1))
 
-    parse(inp)
+    if "directory"  in inp or "folder" in inp:
+        directory(inp)
+    elif "file" in inp:
+        create_file(inp)
 
 
 text.bind("<Return>",get_input)
